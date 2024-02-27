@@ -1,0 +1,6 @@
+NET "rst" LOC = "L13" | IOSTANDARD = LVTTL | PULLUP ; 
+NET "clk" LOC = "B8"  | IOSTANDARD = LVCMOS33 ; 
+NET "sdout" LOC = "D4" | IOSTANDARD = SSTL2_I ;
+
+# Define clock period for 50 MHz oscillator 
+NET "clk" PERIOD = 20ms HIGH 50%;
