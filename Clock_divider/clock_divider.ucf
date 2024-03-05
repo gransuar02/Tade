@@ -1,0 +1,2 @@
+NET "clk50MHz" LOC = "C9"  | IOSTANDARD = LVCMOS33 ; 
+NET "clk" LOC = "C3" | IOSTANDARD = LVTTL | SLEW = SLOW | DRIVE = 8 ; 
