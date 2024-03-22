@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=/home/ise/Proyectos/cronometro-digital/chrono.ncd
+OUTFILE=/home/ise/Proyectos/cronometro-digital/chrono.bit
+FAMILY=Spartan3E
+PART=xc3s1600e-4fg320
+WORKINGDIR=/home/ise/Proyectos/cronometro-digital
+LICENSE=WebPack
+USER_INFO=__0_0_0

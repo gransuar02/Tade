@@ -1,0 +1,10 @@
+EN mux_8bits NULL /home/ise/Proyectos/cronometro-digital/mux_8bits.vhd sub00/vhpl02 1711116296
+AR counter behavioral /home/ise/Proyectos/contador-8bits/counter.vhd sub00/vhpl07 1711116291
+EN minutos NULL /home/ise/Proyectos/cronometro-digital/minutos.vhd sub00/vhpl04 1711116292
+AR horas hoursarch /home/ise/Proyectos/cronometro-digital/horas.vhd sub00/vhpl09 1711116295
+EN chrono NULL /home/ise/Proyectos/cronometro-digital/chrono.vhd sub00/vhpl00 1711116298
+EN counter NULL /home/ise/Proyectos/contador-8bits/counter.vhd sub00/vhpl06 1711116290
+EN horas NULL /home/ise/Proyectos/cronometro-digital/horas.vhd sub00/vhpl08 1711116294
+AR minutos minarch /home/ise/Proyectos/cronometro-digital/minutos.vhd sub00/vhpl05 1711116293
+AR mux_8bits muxarch /home/ise/Proyectos/cronometro-digital/mux_8bits.vhd sub00/vhpl03 1711116297
+AR chrono behavioral /home/ise/Proyectos/cronometro-digital/chrono.vhd sub00/vhpl01 1711116299

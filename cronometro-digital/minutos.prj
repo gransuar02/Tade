@@ -1,0 +1,2 @@
+vhdl work "../contador-8bits/counter.vhd"
+vhdl work "minutos.vhd"

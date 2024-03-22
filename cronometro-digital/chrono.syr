@@ -1,0 +1,700 @@
+Release 14.7 - xst P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> 
+Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.06 secs
+ 
+--> 
+Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.06 secs
+ 
+--> 
+Reading design: chrono.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "chrono.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "chrono"
+Output Format                      : NGC
+Target Device                      : xc3s1600e-4-fg320
+
+---- Source Options
+Top Module Name                    : chrono
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 24
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling vhdl file "/home/ise/Proyectos/contador-8bits/counter.vhd" in Library work.
+Architecture behavioral of Entity counter is up to date.
+Compiling vhdl file "/home/ise/Proyectos/cronometro-digital/minutos.vhd" in Library work.
+Architecture minarch of Entity minutos is up to date.
+Compiling vhdl file "/home/ise/Proyectos/cronometro-digital/horas.vhd" in Library work.
+Architecture hoursarch of Entity horas is up to date.
+Compiling vhdl file "/home/ise/Proyectos/cronometro-digital/mux_8bits.vhd" in Library work.
+Architecture muxarch of Entity mux_8bits is up to date.
+Compiling vhdl file "/home/ise/Proyectos/cronometro-digital/chrono.vhd" in Library work.
+Entity <chrono> compiled.
+Entity <chrono> (Architecture <behavioral>) compiled.
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for entity <chrono> in library <work> (architecture <behavioral>).
+
+Analyzing hierarchy for entity <counter> in library <work> (architecture <behavioral>) with generics.
+	n = 8
+
+Analyzing hierarchy for entity <minutos> in library <work> (architecture <minarch>) with generics.
+	b = 8
+
+Analyzing hierarchy for entity <horas> in library <work> (architecture <hoursarch>) with generics.
+	h = 8
+
+Analyzing hierarchy for entity <mux_8bits> in library <work> (architecture <muxarch>) with generics.
+	r = 8
+
+Analyzing hierarchy for entity <counter> in library <work> (architecture <behavioral>) with generics.
+	n = 8
+
+Analyzing hierarchy for entity <minutos> in library <work> (architecture <minarch>) with generics.
+	b = 8
+
+Analyzing hierarchy for entity <counter> in library <work> (architecture <behavioral>) with generics.
+	n = 8
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing Entity <chrono> in library <work> (Architecture <behavioral>).
+Entity <chrono> analyzed. Unit <chrono> generated.
+
+Analyzing generic Entity <counter> in library <work> (Architecture <behavioral>).
+	n = 8
+Entity <counter> analyzed. Unit <counter> generated.
+
+Analyzing generic Entity <minutos> in library <work> (Architecture <minarch>).
+	b = 8
+Entity <minutos> analyzed. Unit <minutos> generated.
+
+Analyzing generic Entity <horas> in library <work> (Architecture <hoursarch>).
+	h = 8
+Entity <horas> analyzed. Unit <horas> generated.
+
+Analyzing generic Entity <mux_8bits> in library <work> (Architecture <muxarch>).
+	r = 8
+Entity <mux_8bits> analyzed. Unit <mux_8bits> generated.
+
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <counter>.
+    Related source file is "/home/ise/Proyectos/contador-8bits/counter.vhd".
+WARNING:Xst:653 - Signal <top> is used but never assigned. This sourceless signal will be automatically connected to value 11111111.
+    Found finite state machine <FSM_0> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 3                                              |
+    | Transitions        | 6                                              |
+    | Inputs             | 1                                              |
+    | Outputs            | 1                                              |
+    | Clock              | clk                       (rising_edge)        |
+    | Clock enable       | state$cmp_eq0000          (positive)           |
+    | Reset              | stop                      (positive)           |
+    | Reset type         | synchronous                                    |
+    | Reset State        | 00                                             |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 26-bit up counter for signal <count>.
+    Found 8-bit up counter for signal <sdout>.
+    Summary:
+	inferred   1 Finite State Machine(s).
+	inferred   2 Counter(s).
+Unit <counter> synthesized.
+
+
+Synthesizing Unit <mux_8bits>.
+    Related source file is "/home/ise/Proyectos/cronometro-digital/mux_8bits.vhd".
+    Found 8-bit 4-to-1 multiplexer for signal <data_out>.
+    Summary:
+	inferred   8 Multiplexer(s).
+Unit <mux_8bits> synthesized.
+
+
+Synthesizing Unit <minutos>.
+    Related source file is "/home/ise/Proyectos/cronometro-digital/minutos.vhd".
+    Found 1-bit register for signal <clk_div>.
+    Found 4-bit up counter for signal <count10>.
+    Summary:
+	inferred   1 Counter(s).
+	inferred   1 D-type flip-flop(s).
+Unit <minutos> synthesized.
+
+
+Synthesizing Unit <horas>.
+    Related source file is "/home/ise/Proyectos/cronometro-digital/horas.vhd".
+    Found 1-bit register for signal <clk_div>.
+    Found 2-bit up counter for signal <count3>.
+    Summary:
+	inferred   1 Counter(s).
+	inferred   1 D-type flip-flop(s).
+Unit <horas> synthesized.
+
+
+Synthesizing Unit <chrono>.
+    Related source file is "/home/ise/Proyectos/cronometro-digital/chrono.vhd".
+Unit <chrono> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Counters                                             : 9
+ 2-bit up counter                                      : 1
+ 26-bit up counter                                     : 3
+ 4-bit up counter                                      : 2
+ 8-bit up counter                                      : 3
+# Registers                                            : 3
+ 1-bit register                                        : 3
+# Multiplexers                                         : 1
+ 8-bit 4-to-1 multiplexer                              : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Analyzing FSM <FSM_0> for best encoding.
+Optimizing FSM <hours/minutes/segundos/state/FSM> on signal <state[1:2]> with user encoding.
+Optimizing FSM <minutes/segundos/state/FSM> on signal <state[1:2]> with user encoding.
+Optimizing FSM <seconds/state/FSM> on signal <state[1:2]> with user encoding.
+-------------------
+ State | Encoding
+-------------------
+ 00    | 00
+ 01    | 01
+ 10    | 10
+-------------------
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# FSMs                                                 : 1
+# Counters                                             : 9
+ 2-bit up counter                                      : 1
+ 26-bit up counter                                     : 3
+ 4-bit up counter                                      : 2
+ 8-bit up counter                                      : 3
+# Registers                                            : 3
+ Flip-Flops                                            : 3
+# Multiplexers                                         : 1
+ 8-bit 4-to-1 multiplexer                              : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <chrono> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block chrono, actual ratio is 0.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 118
+ Flip-Flops                                            : 118
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : chrono.ngr
+Top Level Output File Name         : chrono
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 13
+
+Cell Usage :
+# BELS                             : 406
+#      GND                         : 1
+#      INV                         : 13
+#      LUT1                        : 96
+#      LUT2                        : 18
+#      LUT3                        : 3
+#      LUT4                        : 44
+#      LUT4_L                      : 3
+#      MUXCY                       : 117
+#      MUXF5                       : 8
+#      VCC                         : 1
+#      XORCY                       : 102
+# FlipFlops/Latches                : 118
+#      FDR                         : 2
+#      FDRE                        : 116
+# Clock Buffers                    : 3
+#      BUFG                        : 2
+#      BUFGP                       : 1
+# IO Buffers                       : 12
+#      IBUF                        : 4
+#      OBUF                        : 8
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s1600efg320-4 
+
+ Number of Slices:                       88  out of  14752     0%  
+ Number of Slice Flip Flops:            118  out of  29504     0%  
+ Number of 4 input LUTs:                177  out of  29504     0%  
+ Number of IOs:                          13
+ Number of bonded IOBs:                  13  out of    250     5%  
+ Number of GCLKs:                         3  out of     24    12%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+----------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)      | Load  |
+-----------------------------------+----------------------------+-------+
+clk                                | BUFGP                      | 43    |
+minutes/clk_div1                   | BUFG                       | 35    |
+hours/clk_div                      | NONE(hours/minutes/clk_div)| 5     |
+hours/minutes/clk_div1             | BUFG                       | 35    |
+-----------------------------------+----------------------------+-------+
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -4
+
+   Minimum period: 6.548ns (Maximum Frequency: 152.711MHz)
+   Minimum input arrival time before clock: 5.302ns
+   Maximum output required time after clock: 6.070ns
+   Maximum combinational path delay: 7.144ns
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 6.548ns (frequency: 152.711MHz)
+  Total number of paths / destination ports: 1619 / 94
+-------------------------------------------------------------------------
+Delay:               6.548ns (Levels of Logic = 9)
+  Source:            seconds/count_5 (FF)
+  Destination:       seconds/count_0 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: seconds/count_5 to seconds/count_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDRE:C->Q             2   0.591   0.622  seconds/count_5 (seconds/count_5)
+     LUT2:I0->O            1   0.704   0.000  seconds/state_cmp_eq0000_wg_lut<0> (seconds/state_cmp_eq0000_wg_lut<0>)
+     MUXCY:S->O            1   0.464   0.000  seconds/state_cmp_eq0000_wg_cy<0> (seconds/state_cmp_eq0000_wg_cy<0>)
+     MUXCY:CI->O           1   0.059   0.000  seconds/state_cmp_eq0000_wg_cy<1> (seconds/state_cmp_eq0000_wg_cy<1>)
+     MUXCY:CI->O           1   0.059   0.000  seconds/state_cmp_eq0000_wg_cy<2> (seconds/state_cmp_eq0000_wg_cy<2>)
+     MUXCY:CI->O           1   0.059   0.000  seconds/state_cmp_eq0000_wg_cy<3> (seconds/state_cmp_eq0000_wg_cy<3>)
+     MUXCY:CI->O           1   0.059   0.000  seconds/state_cmp_eq0000_wg_cy<4> (seconds/state_cmp_eq0000_wg_cy<4>)
+     MUXCY:CI->O           1   0.059   0.000  seconds/state_cmp_eq0000_wg_cy<5> (seconds/state_cmp_eq0000_wg_cy<5>)
+     MUXCY:CI->O           4   0.331   0.666  seconds/state_cmp_eq0000_wg_cy<6> (seconds/state_cmp_eq0000)
+     LUT2:I1->O           26   0.704   1.260  seconds/count_and00001 (seconds/count_and0000)
+     FDRE:R                    0.911          seconds/count_0
+    ----------------------------------------
+    Total                      6.548ns (4.000ns logic, 2.548ns route)
+                                       (61.1% logic, 38.9% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'minutes/clk_div1'
+  Clock period: 6.548ns (frequency: 152.711MHz)
+  Total number of paths / destination ports: 1578 / 78
+-------------------------------------------------------------------------
+Delay:               6.548ns (Levels of Logic = 9)
+  Source:            minutes/segundos/count_5 (FF)
+  Destination:       minutes/segundos/count_0 (FF)
+  Source Clock:      minutes/clk_div1 rising
+  Destination Clock: minutes/clk_div1 rising
+
+  Data Path: minutes/segundos/count_5 to minutes/segundos/count_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDRE:C->Q             2   0.591   0.622  minutes/segundos/count_5 (minutes/segundos/count_5)
+     LUT2:I0->O            1   0.704   0.000  minutes/segundos/state_cmp_eq0000_wg_lut<0> (minutes/segundos/state_cmp_eq0000_wg_lut<0>)
+     MUXCY:S->O            1   0.464   0.000  minutes/segundos/state_cmp_eq0000_wg_cy<0> (minutes/segundos/state_cmp_eq0000_wg_cy<0>)
+     MUXCY:CI->O           1   0.059   0.000  minutes/segundos/state_cmp_eq0000_wg_cy<1> (minutes/segundos/state_cmp_eq0000_wg_cy<1>)
+     MUXCY:CI->O           1   0.059   0.000  minutes/segundos/state_cmp_eq0000_wg_cy<2> (minutes/segundos/state_cmp_eq0000_wg_cy<2>)
+     MUXCY:CI->O           1   0.059   0.000  minutes/segundos/state_cmp_eq0000_wg_cy<3> (minutes/segundos/state_cmp_eq0000_wg_cy<3>)
+     MUXCY:CI->O           1   0.059   0.000  minutes/segundos/state_cmp_eq0000_wg_cy<4> (minutes/segundos/state_cmp_eq0000_wg_cy<4>)
+     MUXCY:CI->O           1   0.059   0.000  minutes/segundos/state_cmp_eq0000_wg_cy<5> (minutes/segundos/state_cmp_eq0000_wg_cy<5>)
+     MUXCY:CI->O           4   0.331   0.666  minutes/segundos/state_cmp_eq0000_wg_cy<6> (minutes/segundos/state_cmp_eq0000)
+     LUT2:I1->O           26   0.704   1.260  minutes/segundos/count_and00001 (minutes/segundos/count_and0000)
+     FDRE:R                    0.911          minutes/segundos/count_0
+    ----------------------------------------
+    Total                      6.548ns (4.000ns logic, 2.548ns route)
+                                       (61.1% logic, 38.9% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'hours/clk_div'
+  Clock period: 4.785ns (frequency: 208.986MHz)
+  Total number of paths / destination ports: 31 / 10
+-------------------------------------------------------------------------
+Delay:               4.785ns (Levels of Logic = 2)
+  Source:            hours/minutes/count10_1 (FF)
+  Destination:       hours/minutes/count10_0 (FF)
+  Source Clock:      hours/clk_div rising
+  Destination Clock: hours/clk_div rising
+
+  Data Path: hours/minutes/count10_1 to hours/minutes/count10_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDRE:C->Q             4   0.591   0.762  hours/minutes/count10_1 (hours/minutes/count10_1)
+     LUT4:I0->O            2   0.704   0.526  hours/minutes/count10_and000011 (hours/minutes/clk_div_cmp_eq0000)
+     LUT2:I1->O            4   0.704   0.587  hours/minutes/count10_and00002 (hours/minutes/count10_and0000)
+     FDRE:R                    0.911          hours/minutes/count10_0
+    ----------------------------------------
+    Total                      4.785ns (2.910ns logic, 1.875ns route)
+                                       (60.8% logic, 39.2% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'hours/minutes/clk_div1'
+  Clock period: 6.548ns (frequency: 152.711MHz)
+  Total number of paths / destination ports: 1578 / 78
+-------------------------------------------------------------------------
+Delay:               6.548ns (Levels of Logic = 9)
+  Source:            hours/minutes/segundos/count_5 (FF)
+  Destination:       hours/minutes/segundos/count_0 (FF)
+  Source Clock:      hours/minutes/clk_div1 rising
+  Destination Clock: hours/minutes/clk_div1 rising
+
+  Data Path: hours/minutes/segundos/count_5 to hours/minutes/segundos/count_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDRE:C->Q             2   0.591   0.622  hours/minutes/segundos/count_5 (hours/minutes/segundos/count_5)
+     LUT2:I0->O            1   0.704   0.000  hours/minutes/segundos/state_cmp_eq0000_wg_lut<0> (hours/minutes/segundos/state_cmp_eq0000_wg_lut<0>)
+     MUXCY:S->O            1   0.464   0.000  hours/minutes/segundos/state_cmp_eq0000_wg_cy<0> (hours/minutes/segundos/state_cmp_eq0000_wg_cy<0>)
+     MUXCY:CI->O           1   0.059   0.000  hours/minutes/segundos/state_cmp_eq0000_wg_cy<1> (hours/minutes/segundos/state_cmp_eq0000_wg_cy<1>)
+     MUXCY:CI->O           1   0.059   0.000  hours/minutes/segundos/state_cmp_eq0000_wg_cy<2> (hours/minutes/segundos/state_cmp_eq0000_wg_cy<2>)
+     MUXCY:CI->O           1   0.059   0.000  hours/minutes/segundos/state_cmp_eq0000_wg_cy<3> (hours/minutes/segundos/state_cmp_eq0000_wg_cy<3>)
+     MUXCY:CI->O           1   0.059   0.000  hours/minutes/segundos/state_cmp_eq0000_wg_cy<4> (hours/minutes/segundos/state_cmp_eq0000_wg_cy<4>)
+     MUXCY:CI->O           1   0.059   0.000  hours/minutes/segundos/state_cmp_eq0000_wg_cy<5> (hours/minutes/segundos/state_cmp_eq0000_wg_cy<5>)
+     MUXCY:CI->O           4   0.331   0.666  hours/minutes/segundos/state_cmp_eq0000_wg_cy<6> (hours/minutes/segundos/state_cmp_eq0000)
+     LUT2:I1->O           26   0.704   1.260  hours/minutes/segundos/count_and00001 (hours/minutes/segundos/count_and0000)
+     FDRE:R                    0.911          hours/minutes/segundos/count_0
+    ----------------------------------------
+    Total                      6.548ns (4.000ns logic, 2.548ns route)
+                                       (61.1% logic, 38.9% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 74 / 74
+-------------------------------------------------------------------------
+Offset:              5.302ns (Levels of Logic = 2)
+  Source:            stop (PAD)
+  Destination:       seconds/count_0 (FF)
+  Destination Clock: clk rising
+
+  Data Path: stop to seconds/count_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            16   1.218   1.209  stop_IBUF (stop_IBUF)
+     LUT2:I0->O           26   0.704   1.260  seconds/count_and00001 (seconds/count_and0000)
+     FDRE:R                    0.911          seconds/count_0
+    ----------------------------------------
+    Total                      5.302ns (2.833ns logic, 2.469ns route)
+                                       (53.4% logic, 46.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'minutes/clk_div1'
+  Total number of paths / destination ports: 62 / 62
+-------------------------------------------------------------------------
+Offset:              5.302ns (Levels of Logic = 2)
+  Source:            stop (PAD)
+  Destination:       minutes/segundos/count_0 (FF)
+  Destination Clock: minutes/clk_div1 rising
+
+  Data Path: stop to minutes/segundos/count_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            16   1.218   1.209  stop_IBUF (stop_IBUF)
+     LUT2:I0->O           26   0.704   1.260  minutes/segundos/count_and00001 (minutes/segundos/count_and0000)
+     FDRE:R                    0.911          minutes/segundos/count_0
+    ----------------------------------------
+    Total                      5.302ns (2.833ns logic, 2.469ns route)
+                                       (53.4% logic, 46.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'hours/clk_div'
+  Total number of paths / destination ports: 9 / 9
+-------------------------------------------------------------------------
+Offset:              4.790ns (Levels of Logic = 2)
+  Source:            stop (PAD)
+  Destination:       hours/minutes/count10_0 (FF)
+  Destination Clock: hours/clk_div rising
+
+  Data Path: stop to hours/minutes/count10_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            16   1.218   1.034  stop_IBUF (stop_IBUF)
+     INV:I->O             86   0.704   1.279  stop_inv1_INV_0 (stop_inv)
+     FDRE:CE                   0.555          hours/minutes/count10_0
+    ----------------------------------------
+    Total                      4.790ns (2.477ns logic, 2.313ns route)
+                                       (51.7% logic, 48.3% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'hours/minutes/clk_div1'
+  Total number of paths / destination ports: 62 / 62
+-------------------------------------------------------------------------
+Offset:              5.302ns (Levels of Logic = 2)
+  Source:            stop (PAD)
+  Destination:       hours/minutes/segundos/count_0 (FF)
+  Destination Clock: hours/minutes/clk_div1 rising
+
+  Data Path: stop to hours/minutes/segundos/count_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            16   1.218   1.209  stop_IBUF (stop_IBUF)
+     LUT2:I0->O           26   0.704   1.260  hours/minutes/segundos/count_and00001 (hours/minutes/segundos/count_and0000)
+     FDRE:R                    0.911          hours/minutes/segundos/count_0
+    ----------------------------------------
+    Total                      5.302ns (2.833ns logic, 2.469ns route)
+                                       (53.4% logic, 46.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 16 / 8
+-------------------------------------------------------------------------
+Offset:              6.070ns (Levels of Logic = 3)
+  Source:            seconds/sdout_0 (FF)
+  Destination:       led0 (PAD)
+  Source Clock:      clk rising
+
+  Data Path: seconds/sdout_0 to led0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDRE:C->Q             4   0.591   0.762  seconds/sdout_0 (seconds/sdout_0)
+     LUT4:I0->O            1   0.704   0.000  mux/Mmux_data_out3_F (N28)
+     MUXF5:I0->O           1   0.321   0.420  mux/Mmux_data_out3 (led0_OBUF)
+     OBUF:I->O                 3.272          led0_OBUF (led0)
+    ----------------------------------------
+    Total                      6.070ns (4.888ns logic, 1.182ns route)
+                                       (80.5% logic, 19.5% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'minutes/clk_div1'
+  Total number of paths / destination ports: 16 / 8
+-------------------------------------------------------------------------
+Offset:              5.930ns (Levels of Logic = 3)
+  Source:            minutes/segundos/sdout_0 (FF)
+  Destination:       led0 (PAD)
+  Source Clock:      minutes/clk_div1 rising
+
+  Data Path: minutes/segundos/sdout_0 to led0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDRE:C->Q             4   0.591   0.622  minutes/segundos/sdout_0 (minutes/segundos/sdout_0)
+     LUT4:I2->O            1   0.704   0.000  mux/Mmux_data_out3_G (N29)
+     MUXF5:I1->O           1   0.321   0.420  mux/Mmux_data_out3 (led0_OBUF)
+     OBUF:I->O                 3.272          led0_OBUF (led0)
+    ----------------------------------------
+    Total                      5.930ns (4.888ns logic, 1.042ns route)
+                                       (82.4% logic, 17.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'hours/minutes/clk_div1'
+  Total number of paths / destination ports: 8 / 8
+-------------------------------------------------------------------------
+Offset:              5.553ns (Levels of Logic = 2)
+  Source:            hours/minutes/segundos/sdout_0 (FF)
+  Destination:       led0 (PAD)
+  Source Clock:      hours/minutes/clk_div1 rising
+
+  Data Path: hours/minutes/segundos/sdout_0 to led0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDRE:C->Q             3   0.591   0.531  hours/minutes/segundos/sdout_0 (hours/minutes/segundos/sdout_0)
+     MUXF5:S->O            1   0.739   0.420  mux/Mmux_data_out3 (led0_OBUF)
+     OBUF:I->O                 3.272          led0_OBUF (led0)
+    ----------------------------------------
+    Total                      5.553ns (4.602ns logic, 0.951ns route)
+                                       (82.9% logic, 17.1% route)
+
+=========================================================================
+Timing constraint: Default path analysis
+  Total number of paths / destination ports: 32 / 8
+-------------------------------------------------------------------------
+Delay:               7.144ns (Levels of Logic = 4)
+  Source:            sel1 (PAD)
+  Destination:       led0 (PAD)
+
+  Data Path: sel1 to led0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            16   1.218   1.209  sel1_IBUF (sel1_IBUF)
+     LUT4:I0->O            1   0.704   0.000  mux/Mmux_data_out9_G (N25)
+     MUXF5:I1->O           1   0.321   0.420  mux/Mmux_data_out9 (led2_OBUF)
+     OBUF:I->O                 3.272          led2_OBUF (led2)
+    ----------------------------------------
+    Total                      7.144ns (5.515ns logic, 1.629ns route)
+                                       (77.2% logic, 22.8% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 12.00 secs
+Total CPU time to Xst completion: 5.10 secs
+ 
+--> 
+
+
+Total memory usage is 614012 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    1 (   0 filtered)
+Number of infos    :    1 (   0 filtered)
+

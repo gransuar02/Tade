@@ -1,0 +1,5 @@
+set -tmpdir "/home/ise/Proyectos/cronometro-digital/xst/projnav.tmp"
+set -xsthdpdir "/home/ise/Proyectos/cronometro-digital/xst"
+elaborate
+-ifn minutos.prj
+-ifmt mixed

@@ -1,0 +1,31 @@
+V3 19
+FL /home/ise/Proyectos/contador-8bits/counter.vhd 2024/03/22.13:53:57 P.20131013
+EN work/counter 1711116290 FL /home/ise/Proyectos/contador-8bits/counter.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/std_logic_arith 1381692177 \
+      PB ieee/STD_LOGIC_UNSIGNED 1381692179
+AR work/counter/Behavioral 1711116291 \
+      FL /home/ise/Proyectos/contador-8bits/counter.vhd EN work/counter 1711116290
+FL /home/ise/Proyectos/cronometro-digital/chrono.vhd 2024/03/22.14:04:28 P.20131013
+EN work/chrono 1711116298 FL /home/ise/Proyectos/cronometro-digital/chrono.vhd \
+      PB ieee/std_logic_1164 1381692176
+AR work/chrono/Behavioral 1711116299 \
+      FL /home/ise/Proyectos/cronometro-digital/chrono.vhd EN work/chrono 1711116298 \
+      CP counter CP minutos CP horas CP mux_8bits
+FL /home/ise/Proyectos/cronometro-digital/horas.vhd 2024/03/22.14:03:16 P.20131013
+EN work/horas 1711116294 FL /home/ise/Proyectos/cronometro-digital/horas.vhd \
+      PB ieee/std_logic_1164 1381692176
+AR work/horas/hoursArch 1711116295 \
+      FL /home/ise/Proyectos/cronometro-digital/horas.vhd EN work/horas 1711116294 \
+      CP minutos
+FL /home/ise/Proyectos/cronometro-digital/minutos.vhd 2024/03/22.13:57:07 P.20131013
+EN work/minutos 1711116292 FL /home/ise/Proyectos/cronometro-digital/minutos.vhd \
+      PB ieee/std_logic_1164 1381692176
+AR work/minutos/minArch 1711116293 \
+      FL /home/ise/Proyectos/cronometro-digital/minutos.vhd EN work/minutos 1711116292 \
+      CP counter
+FL /home/ise/Proyectos/cronometro-digital/mux_8bits.vhd 2024/03/22.14:03:16 P.20131013
+EN work/mux_8bits 1711116296 \
+      FL /home/ise/Proyectos/cronometro-digital/mux_8bits.vhd \
+      PB ieee/std_logic_1164 1381692176
+AR work/mux_8bits/muxArch 1711116297 \
+      FL /home/ise/Proyectos/cronometro-digital/mux_8bits.vhd EN work/mux_8bits 1711116296

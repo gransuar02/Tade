@@ -1,0 +1,30 @@
+xst -intstyle ise -ifn "/home/ise/Proyectos/cronometro-digital/chrono.xst" -ofn "/home/ise/Proyectos/cronometro-digital/chrono.syr" 
+xst -intstyle ise -ifn "/home/ise/Proyectos/cronometro-digital/chrono.xst" -ofn "/home/ise/Proyectos/cronometro-digital/chrono.syr" 
+xst -intstyle ise -ifn "/home/ise/Proyectos/cronometro-digital/chrono.xst" -ofn "/home/ise/Proyectos/cronometro-digital/chrono.syr" 
+xst -intstyle ise -ifn "/home/ise/Proyectos/cronometro-digital/chrono.xst" -ofn "/home/ise/Proyectos/cronometro-digital/chrono.syr" 
+xst -intstyle ise -ifn "/home/ise/Proyectos/cronometro-digital/chrono.xst" -ofn "/home/ise/Proyectos/cronometro-digital/chrono.syr" 
+xst -intstyle ise -ifn "/home/ise/Proyectos/cronometro-digital/chrono.xst" -ofn "/home/ise/Proyectos/cronometro-digital/chrono.syr" 
+xst -intstyle ise -ifn "/home/ise/Proyectos/cronometro-digital/chrono.xst" -ofn "/home/ise/Proyectos/cronometro-digital/chrono.syr" 
+xst -intstyle ise -ifn "/home/ise/Proyectos/cronometro-digital/chrono.xst" -ofn "/home/ise/Proyectos/cronometro-digital/chrono.syr" 
+xst -intstyle ise -ifn "/home/ise/Proyectos/cronometro-digital/chrono.xst" -ofn "/home/ise/Proyectos/cronometro-digital/chrono.syr" 
+xst -intstyle ise -ifn "/home/ise/Proyectos/cronometro-digital/chrono.xst" -ofn "/home/ise/Proyectos/cronometro-digital/chrono.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s1600e-fg320-4 chrono.ngc chrono.ngd  
+map -intstyle ise -p xc3s1600e-fg320-4 -cm area -ir off -pr off -c 100 -o chrono_map.ncd chrono.ngd chrono.pcf 
+par -w -intstyle ise -ol high -t 1 chrono_map.ncd chrono.ncd chrono.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml chrono.twx chrono.ncd -o chrono.twr chrono.pcf 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc cronometro.ucf -p xc3s1600e-fg320-4 chrono.ngc chrono.ngd  
+map -intstyle ise -p xc3s1600e-fg320-4 -cm area -ir off -pr off -c 100 -o chrono_map.ncd chrono.ngd chrono.pcf 
+par -w -intstyle ise -ol high -t 1 chrono_map.ncd chrono.ncd chrono.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml chrono.twx chrono.ncd -o chrono.twr chrono.pcf -ucf cronometro.ucf 
+bitgen -intstyle ise -f chrono.ut chrono.ncd 
+xst -intstyle ise -ifn "/home/ise/Proyectos/cronometro-digital/chrono.xst" -ofn "/home/ise/Proyectos/cronometro-digital/chrono.syr" 
+xst -intstyle ise -ifn "/home/ise/Proyectos/cronometro-digital/chrono.xst" -ofn "/home/ise/Proyectos/cronometro-digital/chrono.syr" 
+xst -intstyle ise -ifn "/home/ise/Proyectos/cronometro-digital/chrono.xst" -ofn "/home/ise/Proyectos/cronometro-digital/chrono.syr" 
+xst -intstyle ise -ifn "/home/ise/Proyectos/cronometro-digital/chrono.xst" -ofn "/home/ise/Proyectos/cronometro-digital/chrono.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc cronometro.ucf -p xc3s1600e-fg320-4 chrono.ngc chrono.ngd  
+map -intstyle ise -p xc3s1600e-fg320-4 -cm area -ir off -pr off -c 100 -o chrono_map.ncd chrono.ngd chrono.pcf 
+par -w -intstyle ise -ol high -t 1 chrono_map.ncd chrono.ncd chrono.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml chrono.twx chrono.ncd -o chrono.twr chrono.pcf -ucf cronometro.ucf 
+bitgen -intstyle ise -f chrono.ut chrono.ncd 
+xst -intstyle ise -ifn "/home/ise/Proyectos/cronometro-digital/chrono.xst" -ofn "/home/ise/Proyectos/cronometro-digital/chrono.syr" 
+xst -intstyle ise -ifn "/home/ise/Proyectos/cronometro-digital/chrono.xst" -ofn "/home/ise/Proyectos/cronometro-digital/chrono.syr" 
