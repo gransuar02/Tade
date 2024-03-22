@@ -1,0 +1,1 @@
+Cronometro que cuenta hasta 255, con una entrada INIT/PAUSE para pausar o reanudar la cuenta, y otra llamada STOP para reiniciarla
