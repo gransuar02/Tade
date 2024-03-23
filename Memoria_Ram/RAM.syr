@@ -1,0 +1,638 @@
+Release 14.7 - xst P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> 
+Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.01 secs
+ 
+--> 
+Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.01 secs
+ 
+--> 
+Reading design: RAM.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "RAM.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "RAM"
+Output Format                      : NGC
+Target Device                      : xc7a100t-3-csg324
+
+---- Source Options
+Top Module Name                    : RAM
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 32
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Parsing VHDL file "/home/ise/Proyectos/Memoria_Ram/RAM.vhd" into library work
+Parsing entity <RAM>.
+Parsing architecture <Behavioral> of entity <ram>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating entity <RAM> (architecture <Behavioral>) from library <work>.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <RAM>.
+    Related source file is "/home/ise/Proyectos/Memoria_Ram/RAM.vhd".
+    Found 32-bit register for signal <RAM<254>>.
+    Found 32-bit register for signal <RAM<253>>.
+    Found 32-bit register for signal <RAM<252>>.
+    Found 32-bit register for signal <RAM<251>>.
+    Found 32-bit register for signal <RAM<250>>.
+    Found 32-bit register for signal <RAM<249>>.
+    Found 32-bit register for signal <RAM<248>>.
+    Found 32-bit register for signal <RAM<247>>.
+    Found 32-bit register for signal <RAM<246>>.
+    Found 32-bit register for signal <RAM<245>>.
+    Found 32-bit register for signal <RAM<244>>.
+    Found 32-bit register for signal <RAM<243>>.
+    Found 32-bit register for signal <RAM<242>>.
+    Found 32-bit register for signal <RAM<241>>.
+    Found 32-bit register for signal <RAM<240>>.
+    Found 32-bit register for signal <RAM<239>>.
+    Found 32-bit register for signal <RAM<238>>.
+    Found 32-bit register for signal <RAM<237>>.
+    Found 32-bit register for signal <RAM<236>>.
+    Found 32-bit register for signal <RAM<235>>.
+    Found 32-bit register for signal <RAM<234>>.
+    Found 32-bit register for signal <RAM<233>>.
+    Found 32-bit register for signal <RAM<232>>.
+    Found 32-bit register for signal <RAM<231>>.
+    Found 32-bit register for signal <RAM<230>>.
+    Found 32-bit register for signal <RAM<229>>.
+    Found 32-bit register for signal <RAM<228>>.
+    Found 32-bit register for signal <RAM<227>>.
+    Found 32-bit register for signal <RAM<226>>.
+    Found 32-bit register for signal <RAM<225>>.
+    Found 32-bit register for signal <RAM<224>>.
+    Found 32-bit register for signal <RAM<223>>.
+    Found 32-bit register for signal <RAM<222>>.
+    Found 32-bit register for signal <RAM<221>>.
+    Found 32-bit register for signal <RAM<220>>.
+    Found 32-bit register for signal <RAM<219>>.
+    Found 32-bit register for signal <RAM<218>>.
+    Found 32-bit register for signal <RAM<217>>.
+    Found 32-bit register for signal <RAM<216>>.
+    Found 32-bit register for signal <RAM<215>>.
+    Found 32-bit register for signal <RAM<214>>.
+    Found 32-bit register for signal <RAM<213>>.
+    Found 32-bit register for signal <RAM<212>>.
+    Found 32-bit register for signal <RAM<211>>.
+    Found 32-bit register for signal <RAM<210>>.
+    Found 32-bit register for signal <RAM<209>>.
+    Found 32-bit register for signal <RAM<208>>.
+    Found 32-bit register for signal <RAM<207>>.
+    Found 32-bit register for signal <RAM<206>>.
+    Found 32-bit register for signal <RAM<205>>.
+    Found 32-bit register for signal <RAM<204>>.
+    Found 32-bit register for signal <RAM<203>>.
+    Found 32-bit register for signal <RAM<202>>.
+    Found 32-bit register for signal <RAM<201>>.
+    Found 32-bit register for signal <RAM<200>>.
+    Found 32-bit register for signal <RAM<199>>.
+    Found 32-bit register for signal <RAM<198>>.
+    Found 32-bit register for signal <RAM<197>>.
+    Found 32-bit register for signal <RAM<196>>.
+    Found 32-bit register for signal <RAM<195>>.
+    Found 32-bit register for signal <RAM<194>>.
+    Found 32-bit register for signal <RAM<193>>.
+    Found 32-bit register for signal <RAM<192>>.
+    Found 32-bit register for signal <RAM<191>>.
+    Found 32-bit register for signal <RAM<190>>.
+    Found 32-bit register for signal <RAM<189>>.
+    Found 32-bit register for signal <RAM<188>>.
+    Found 32-bit register for signal <RAM<187>>.
+    Found 32-bit register for signal <RAM<186>>.
+    Found 32-bit register for signal <RAM<185>>.
+    Found 32-bit register for signal <RAM<184>>.
+    Found 32-bit register for signal <RAM<183>>.
+    Found 32-bit register for signal <RAM<182>>.
+    Found 32-bit register for signal <RAM<181>>.
+    Found 32-bit register for signal <RAM<180>>.
+    Found 32-bit register for signal <RAM<179>>.
+    Found 32-bit register for signal <RAM<178>>.
+    Found 32-bit register for signal <RAM<177>>.
+    Found 32-bit register for signal <RAM<176>>.
+    Found 32-bit register for signal <RAM<175>>.
+    Found 32-bit register for signal <RAM<174>>.
+    Found 32-bit register for signal <RAM<173>>.
+    Found 32-bit register for signal <RAM<172>>.
+    Found 32-bit register for signal <RAM<171>>.
+    Found 32-bit register for signal <RAM<170>>.
+    Found 32-bit register for signal <RAM<169>>.
+    Found 32-bit register for signal <RAM<168>>.
+    Found 32-bit register for signal <RAM<167>>.
+    Found 32-bit register for signal <RAM<166>>.
+    Found 32-bit register for signal <RAM<165>>.
+    Found 32-bit register for signal <RAM<164>>.
+    Found 32-bit register for signal <RAM<163>>.
+    Found 32-bit register for signal <RAM<162>>.
+    Found 32-bit register for signal <RAM<161>>.
+    Found 32-bit register for signal <RAM<160>>.
+    Found 32-bit register for signal <RAM<159>>.
+    Found 32-bit register for signal <RAM<158>>.
+    Found 32-bit register for signal <RAM<157>>.
+    Found 32-bit register for signal <RAM<156>>.
+    Found 32-bit register for signal <RAM<155>>.
+    Found 32-bit register for signal <RAM<154>>.
+    Found 32-bit register for signal <RAM<153>>.
+    Found 32-bit register for signal <RAM<152>>.
+    Found 32-bit register for signal <RAM<151>>.
+    Found 32-bit register for signal <RAM<150>>.
+    Found 32-bit register for signal <RAM<149>>.
+    Found 32-bit register for signal <RAM<148>>.
+    Found 32-bit register for signal <RAM<147>>.
+    Found 32-bit register for signal <RAM<146>>.
+    Found 32-bit register for signal <RAM<145>>.
+    Found 32-bit register for signal <RAM<144>>.
+    Found 32-bit register for signal <RAM<143>>.
+    Found 32-bit register for signal <RAM<142>>.
+    Found 32-bit register for signal <RAM<141>>.
+    Found 32-bit register for signal <RAM<140>>.
+    Found 32-bit register for signal <RAM<139>>.
+    Found 32-bit register for signal <RAM<138>>.
+    Found 32-bit register for signal <RAM<137>>.
+    Found 32-bit register for signal <RAM<136>>.
+    Found 32-bit register for signal <RAM<135>>.
+    Found 32-bit register for signal <RAM<134>>.
+    Found 32-bit register for signal <RAM<133>>.
+    Found 32-bit register for signal <RAM<132>>.
+    Found 32-bit register for signal <RAM<131>>.
+    Found 32-bit register for signal <RAM<130>>.
+    Found 32-bit register for signal <RAM<129>>.
+    Found 32-bit register for signal <RAM<128>>.
+    Found 32-bit register for signal <RAM<127>>.
+    Found 32-bit register for signal <RAM<126>>.
+    Found 32-bit register for signal <RAM<125>>.
+    Found 32-bit register for signal <RAM<124>>.
+    Found 32-bit register for signal <RAM<123>>.
+    Found 32-bit register for signal <RAM<122>>.
+    Found 32-bit register for signal <RAM<121>>.
+    Found 32-bit register for signal <RAM<120>>.
+    Found 32-bit register for signal <RAM<119>>.
+    Found 32-bit register for signal <RAM<118>>.
+    Found 32-bit register for signal <RAM<117>>.
+    Found 32-bit register for signal <RAM<116>>.
+    Found 32-bit register for signal <RAM<115>>.
+    Found 32-bit register for signal <RAM<114>>.
+    Found 32-bit register for signal <RAM<113>>.
+    Found 32-bit register for signal <RAM<112>>.
+    Found 32-bit register for signal <RAM<111>>.
+    Found 32-bit register for signal <RAM<110>>.
+    Found 32-bit register for signal <RAM<109>>.
+    Found 32-bit register for signal <RAM<108>>.
+    Found 32-bit register for signal <RAM<107>>.
+    Found 32-bit register for signal <RAM<106>>.
+    Found 32-bit register for signal <RAM<105>>.
+    Found 32-bit register for signal <RAM<104>>.
+    Found 32-bit register for signal <RAM<103>>.
+    Found 32-bit register for signal <RAM<102>>.
+    Found 32-bit register for signal <RAM<101>>.
+    Found 32-bit register for signal <RAM<100>>.
+    Found 32-bit register for signal <RAM<99>>.
+    Found 32-bit register for signal <RAM<98>>.
+    Found 32-bit register for signal <RAM<97>>.
+    Found 32-bit register for signal <RAM<96>>.
+    Found 32-bit register for signal <RAM<95>>.
+    Found 32-bit register for signal <RAM<94>>.
+    Found 32-bit register for signal <RAM<93>>.
+    Found 32-bit register for signal <RAM<92>>.
+    Found 32-bit register for signal <RAM<91>>.
+    Found 32-bit register for signal <RAM<90>>.
+    Found 32-bit register for signal <RAM<89>>.
+    Found 32-bit register for signal <RAM<88>>.
+    Found 32-bit register for signal <RAM<87>>.
+    Found 32-bit register for signal <RAM<86>>.
+    Found 32-bit register for signal <RAM<85>>.
+    Found 32-bit register for signal <RAM<84>>.
+    Found 32-bit register for signal <RAM<83>>.
+    Found 32-bit register for signal <RAM<82>>.
+    Found 32-bit register for signal <RAM<81>>.
+    Found 32-bit register for signal <RAM<80>>.
+    Found 32-bit register for signal <RAM<79>>.
+    Found 32-bit register for signal <RAM<78>>.
+    Found 32-bit register for signal <RAM<77>>.
+    Found 32-bit register for signal <RAM<76>>.
+    Found 32-bit register for signal <RAM<75>>.
+    Found 32-bit register for signal <RAM<74>>.
+    Found 32-bit register for signal <RAM<73>>.
+    Found 32-bit register for signal <RAM<72>>.
+    Found 32-bit register for signal <RAM<71>>.
+    Found 32-bit register for signal <RAM<70>>.
+    Found 32-bit register for signal <RAM<69>>.
+    Found 32-bit register for signal <RAM<68>>.
+    Found 32-bit register for signal <RAM<67>>.
+    Found 32-bit register for signal <RAM<66>>.
+    Found 32-bit register for signal <RAM<65>>.
+    Found 32-bit register for signal <RAM<64>>.
+    Found 32-bit register for signal <RAM<63>>.
+    Found 32-bit register for signal <RAM<62>>.
+    Found 32-bit register for signal <RAM<61>>.
+    Found 32-bit register for signal <RAM<60>>.
+    Found 32-bit register for signal <RAM<59>>.
+    Found 32-bit register for signal <RAM<58>>.
+    Found 32-bit register for signal <RAM<57>>.
+    Found 32-bit register for signal <RAM<56>>.
+    Found 32-bit register for signal <RAM<55>>.
+    Found 32-bit register for signal <RAM<54>>.
+    Found 32-bit register for signal <RAM<53>>.
+    Found 32-bit register for signal <RAM<52>>.
+    Found 32-bit register for signal <RAM<51>>.
+    Found 32-bit register for signal <RAM<50>>.
+    Found 32-bit register for signal <RAM<49>>.
+    Found 32-bit register for signal <RAM<48>>.
+    Found 32-bit register for signal <RAM<47>>.
+    Found 32-bit register for signal <RAM<46>>.
+    Found 32-bit register for signal <RAM<45>>.
+    Found 32-bit register for signal <RAM<44>>.
+    Found 32-bit register for signal <RAM<43>>.
+    Found 32-bit register for signal <RAM<42>>.
+    Found 32-bit register for signal <RAM<41>>.
+    Found 32-bit register for signal <RAM<40>>.
+    Found 32-bit register for signal <RAM<39>>.
+    Found 32-bit register for signal <RAM<38>>.
+    Found 32-bit register for signal <RAM<37>>.
+    Found 32-bit register for signal <RAM<36>>.
+    Found 32-bit register for signal <RAM<35>>.
+    Found 32-bit register for signal <RAM<34>>.
+    Found 32-bit register for signal <RAM<33>>.
+    Found 32-bit register for signal <RAM<32>>.
+    Found 32-bit register for signal <RAM<31>>.
+    Found 32-bit register for signal <RAM<30>>.
+    Found 32-bit register for signal <RAM<29>>.
+    Found 32-bit register for signal <RAM<28>>.
+    Found 32-bit register for signal <RAM<27>>.
+    Found 32-bit register for signal <RAM<26>>.
+    Found 32-bit register for signal <RAM<25>>.
+    Found 32-bit register for signal <RAM<24>>.
+    Found 32-bit register for signal <RAM<23>>.
+    Found 32-bit register for signal <RAM<22>>.
+    Found 32-bit register for signal <RAM<21>>.
+    Found 32-bit register for signal <RAM<20>>.
+    Found 32-bit register for signal <RAM<19>>.
+    Found 32-bit register for signal <RAM<18>>.
+    Found 32-bit register for signal <RAM<17>>.
+    Found 32-bit register for signal <RAM<16>>.
+    Found 32-bit register for signal <RAM<15>>.
+    Found 32-bit register for signal <RAM<14>>.
+    Found 32-bit register for signal <RAM<13>>.
+    Found 32-bit register for signal <RAM<12>>.
+    Found 32-bit register for signal <RAM<11>>.
+    Found 32-bit register for signal <RAM<10>>.
+    Found 32-bit register for signal <RAM<9>>.
+    Found 32-bit register for signal <RAM<8>>.
+    Found 32-bit register for signal <RAM<7>>.
+    Found 32-bit register for signal <RAM<6>>.
+    Found 32-bit register for signal <RAM<5>>.
+    Found 32-bit register for signal <RAM<4>>.
+    Found 32-bit register for signal <RAM<3>>.
+    Found 32-bit register for signal <RAM<2>>.
+    Found 32-bit register for signal <RAM<1>>.
+    Found 32-bit register for signal <RAM<0>>.
+    Found 32-bit register for signal <dout>.
+    Found 32-bit register for signal <RAM<255>>.
+INFO:Xst:3019 - HDL ADVISOR - 8192 flip-flops were inferred for signal <RAM>. You may be trying to describe a RAM in a way that is incompatible with block and distributed RAM resources available on Xilinx devices, or with a specific template that is not supported. Please review the Xilinx resources documentation and the XST user manual for coding guidelines. Taking advantage of RAM resources will lead to improved device usage and reduced synthesis time.
+    Found 32-bit 256-to-1 multiplexer for signal <addr[7]_RAM[255][31]_wide_mux_0_OUT> created at line 60.
+    Summary:
+	inferred 8224 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+Unit <RAM> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Registers                                            : 257
+ 32-bit register                                       : 257
+# Multiplexers                                         : 1
+ 32-bit 256-to-1 multiplexer                           : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Registers                                            : 8224
+ Flip-Flops                                            : 8224
+# Multiplexers                                         : 1
+ 32-bit 256-to-1 multiplexer                           : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <RAM> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block RAM, actual ratio is 22.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 8224
+ Flip-Flops                                            : 8224
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : RAM.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 4077
+#      LUT3                        : 9
+#      LUT5                        : 260
+#      LUT6                        : 2176
+#      MUXF7                       : 1088
+#      MUXF8                       : 544
+# FlipFlops/Latches                : 8224
+#      FDE                         : 32
+#      FDRE                        : 8192
+# Clock Buffers                    : 2
+#      BUFG                        : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 76
+#      IBUF                        : 44
+#      OBUF                        : 32
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 7a100tcsg324-3 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:            8224  out of  126800     6%  
+ Number of Slice LUTs:                 2445  out of  63400     3%  
+    Number used as Logic:              2445  out of  63400     3%  
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:   8423
+   Number with an unused Flip Flop:     199  out of   8423     2%  
+   Number with an unused LUT:          5978  out of   8423    70%  
+   Number of fully used LUT-FF pairs:  2246  out of   8423    26%  
+   Number of unique control sets:       257
+
+IO Utilization: 
+ Number of IOs:                          77
+ Number of bonded IOBs:                  77  out of    210    36%  
+
+Specific Feature Utilization:
+ Number of BUFG/BUFGCTRLs:                2  out of     32     6%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 8224  |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -3
+
+   Minimum period: 2.670ns (Maximum Frequency: 374.588MHz)
+   Minimum input arrival time before clock: 2.673ns
+   Maximum output required time after clock: 0.640ns
+   Maximum combinational path delay: No path found
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 2.670ns (frequency: 374.588MHz)
+  Total number of paths / destination ports: 8192 / 32
+-------------------------------------------------------------------------
+Delay:               2.670ns (Levels of Logic = 6)
+  Source:            RAM_102_0 (FF)
+  Destination:       dout_0 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: RAM_102_0 to dout_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDRE:C->Q             1   0.361   0.556  RAM_102_0 (RAM_102_0)
+     LUT6:I2->O            1   0.097   0.000  Mmux_addr[7]_RAM[255][31]_wide_mux_0_OUT_1314 (Mmux_addr[7]_RAM[255][31]_wide_mux_0_OUT_1314)
+     MUXF7:I1->O           1   0.279   0.000  Mmux_addr[7]_RAM[255][31]_wide_mux_0_OUT_12_f7_4 (Mmux_addr[7]_RAM[255][31]_wide_mux_0_OUT_12_f75)
+     MUXF8:I0->O           1   0.218   0.556  Mmux_addr[7]_RAM[255][31]_wide_mux_0_OUT_10_f8_3 (Mmux_addr[7]_RAM[255][31]_wide_mux_0_OUT_10_f84)
+     LUT6:I2->O            1   0.097   0.000  Mmux_addr[7]_RAM[255][31]_wide_mux_0_OUT_51 (Mmux_addr[7]_RAM[255][31]_wide_mux_0_OUT_51)
+     MUXF7:I1->O           1   0.279   0.000  Mmux_addr[7]_RAM[255][31]_wide_mux_0_OUT_4_f7 (Mmux_addr[7]_RAM[255][31]_wide_mux_0_OUT_4_f7)
+     MUXF8:I0->O           1   0.218   0.000  Mmux_addr[7]_RAM[255][31]_wide_mux_0_OUT_2_f8 (addr[7]_RAM[255][31]_wide_mux_0_OUT<0>)
+     FDE:D                     0.008          dout_0
+    ----------------------------------------
+    Total                      2.670ns (1.557ns logic, 1.113ns route)
+                                       (58.3% logic, 41.7% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 104384 / 16448
+-------------------------------------------------------------------------
+Offset:              2.673ns (Levels of Logic = 7)
+  Source:            addr<1> (PAD)
+  Destination:       dout_0 (FF)
+  Destination Clock: clk rising
+
+  Data Path: addr<1> to dout_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O          2052   0.001   0.919  addr_1_IBUF (addr_1_IBUF)
+     LUT6:I0->O            1   0.097   0.000  Mmux_addr[7]_RAM[255][31]_wide_mux_0_OUT_1314 (Mmux_addr[7]_RAM[255][31]_wide_mux_0_OUT_1314)
+     MUXF7:I1->O           1   0.279   0.000  Mmux_addr[7]_RAM[255][31]_wide_mux_0_OUT_12_f7_4 (Mmux_addr[7]_RAM[255][31]_wide_mux_0_OUT_12_f75)
+     MUXF8:I0->O           1   0.218   0.556  Mmux_addr[7]_RAM[255][31]_wide_mux_0_OUT_10_f8_3 (Mmux_addr[7]_RAM[255][31]_wide_mux_0_OUT_10_f84)
+     LUT6:I2->O            1   0.097   0.000  Mmux_addr[7]_RAM[255][31]_wide_mux_0_OUT_51 (Mmux_addr[7]_RAM[255][31]_wide_mux_0_OUT_51)
+     MUXF7:I1->O           1   0.279   0.000  Mmux_addr[7]_RAM[255][31]_wide_mux_0_OUT_4_f7 (Mmux_addr[7]_RAM[255][31]_wide_mux_0_OUT_4_f7)
+     MUXF8:I0->O           1   0.218   0.000  Mmux_addr[7]_RAM[255][31]_wide_mux_0_OUT_2_f8 (addr[7]_RAM[255][31]_wide_mux_0_OUT<0>)
+     FDE:D                     0.008          dout_0
+    ----------------------------------------
+    Total                      2.673ns (1.197ns logic, 1.476ns route)
+                                       (44.8% logic, 55.2% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 32 / 32
+-------------------------------------------------------------------------
+Offset:              0.640ns (Levels of Logic = 1)
+  Source:            dout_31 (FF)
+  Destination:       dout<31> (PAD)
+  Source Clock:      clk rising
+
+  Data Path: dout_31 to dout<31>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q              1   0.361   0.279  dout_31 (dout_31)
+     OBUF:I->O                 0.000          dout_31_OBUF (dout<31>)
+    ----------------------------------------
+    Total                      0.640ns (0.361ns logic, 0.279ns route)
+                                       (56.4% logic, 43.6% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |    2.670|         |         |         |
+---------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 49.00 secs
+Total CPU time to Xst completion: 26.45 secs
+ 
+--> 
+
+
+Total memory usage is 628428 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    0 (   0 filtered)
+Number of infos    :    1 (   0 filtered)
+

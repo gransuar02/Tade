@@ -1,0 +1,3 @@
+vhdl isim_temp "../../PE/counter.vhd"
+vhdl isim_temp "../../PE/noise_suppressor.vhd"
+vhdl isim_temp "noise_sup_sim.vhd"

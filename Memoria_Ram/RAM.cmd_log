@@ -1,0 +1,9 @@
+xst -intstyle ise -ifn "/home/ise/Proyectos/Memoria_Ram/RAM.xst" -ofn "/home/ise/Proyectos/Memoria_Ram/RAM.syr" 
+xst -intstyle ise -ifn "/home/ise/Proyectos/Memoria_Ram/RAM.xst" -ofn "/home/ise/Proyectos/Memoria_Ram/RAM.syr" 
+xst -intstyle ise -ifn "/home/ise/Proyectos/Memoria_Ram/RAM.xst" -ofn "/home/ise/Proyectos/Memoria_Ram/RAM.syr" 
+xst -intstyle ise -ifn "/home/ise/Proyectos/Memoria_Ram/RAM.xst" -ofn "/home/ise/Proyectos/Memoria_Ram/RAM.syr" 
+xst -intstyle ise -ifn "/home/ise/Proyectos/Memoria_Ram/RAM.xst" -ofn "/home/ise/Proyectos/Memoria_Ram/RAM.syr" 
+xst -intstyle ise -ifn "/home/ise/Proyectos/Memoria_Ram/RAM.xst" -ofn "/home/ise/Proyectos/Memoria_Ram/RAM.syr" 
+xst -intstyle ise -ifn "/home/ise/Proyectos/Memoria_Ram/RAM.xst" -ofn "/home/ise/Proyectos/Memoria_Ram/RAM.syr" 
+xst -intstyle ise -ifn "/home/ise/Proyectos/Memoria_Ram/RAM.xst" -ofn "/home/ise/Proyectos/Memoria_Ram/RAM.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc7a100t-csg324-3 RAM.ngc RAM.ngd  

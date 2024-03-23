@@ -1,0 +1,2 @@
+work	"../../PE/counter.vhd"
+work	"../../PE/noise_suppressor.vhd"

@@ -1,0 +1,29 @@
+Running: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/fuse -intstyle ise -incremental -lib secureip -o /home/ise/Proyectos/PE2/CC/noise_sup_sim_isim_beh.exe -prj /home/ise/Proyectos/PE2/CC/noise_sup_sim_beh.prj work.noise_sup_sim 
+ISim P.20131013 (signature 0xfbc00daa)
+Number of CPUs detected in this system: 1
+Turning on mult-threading, number of parallel sub-compilation jobs: 0 
+Determining compilation order of HDL files
+Parsing VHDL file "/home/ise/Proyectos/PE2/CC/../../PE/counter.vhd" into library work
+Parsing VHDL file "/home/ise/Proyectos/PE2/CC/../../PE/noise_suppressor.vhd" into library work
+Parsing VHDL file "/home/ise/Proyectos/PE2/CC/noise_sup_sim.vhd" into library work
+Starting static elaboration
+WARNING:HDLCompiler:746 - "/build/xfndry10/P.20131013/rtf/vhdl/src/ieee/numeric_std.vhd" Line 3314: Range is empty (null range)
+WARNING:HDLCompiler:220 - "/build/xfndry10/P.20131013/rtf/vhdl/src/ieee/numeric_std.vhd" Line 3314: Assignment ignored
+Completed static elaboration
+Fuse Memory Usage: 98592 KB
+Fuse CPU Usage: 1640 ms
+Compiling package standard
+Compiling package std_logic_1164
+Compiling package numeric_std
+Compiling package math_real
+Compiling package std_logic_arith
+Compiling package std_logic_unsigned
+Compiling architecture behavioral of entity counter [\counter(4)\]
+Compiling architecture rtl of entity noise_suppressor [\noise_suppressor(12)\]
+Compiling architecture behavior of entity noise_sup_sim
+Time Resolution for simulation is 1ps.
+Compiled 11 VHDL Units
+Built simulation executable /home/ise/Proyectos/PE2/CC/noise_sup_sim_isim_beh.exe
+Fuse Memory Usage: 119648 KB
+Fuse CPU Usage: 1910 ms
+GCC CPU Usage: 390 ms

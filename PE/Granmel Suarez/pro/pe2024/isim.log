@@ -1,0 +1,14 @@
+ISim log file
+Running: /home/ise/Proyectos/PE2/CC/noise_sup_sim_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb /home/ise/Proyectos/PE2/CC/noise_sup_sim_isim_beh.wdb 
+ISim P.20131013 (signature 0xfbc00daa)
+This is a Full version of ISim.
+Time resolution is 1 ps
+# onerror resume
+# wave add /
+# run 1000 ns
+Simulator is doing circuit initialization process.
+Finished circuit initialization process.
+at 135 ns: Note: PASS: count 2 (/noise_sup_sim/).
+at 735 ns: Note: PASS: count 20 (/noise_sup_sim/).
+at 787 ns: Note: PASS: count 30 (/noise_sup_sim/).
+# exit 0

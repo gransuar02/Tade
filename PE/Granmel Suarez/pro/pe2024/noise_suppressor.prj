@@ -1,0 +1,2 @@
+vhdl work "../../PE/counter.vhd"
+vhdl work "../../PE/noise_suppressor.vhd"

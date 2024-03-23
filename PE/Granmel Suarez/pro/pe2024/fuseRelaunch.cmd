@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -lib "secureip" -o "/home/ise/Proyectos/PE2/CC/noise_sup_sim_isim_beh.exe" -prj "/home/ise/Proyectos/PE2/CC/noise_sup_sim_beh.prj" "work.noise_sup_sim" 

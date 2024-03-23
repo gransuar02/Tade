@@ -1,0 +1,58 @@
+architecture Behavioral of counter is
+ 
+signal state, next_state : std_logic_vector(1 downto 0);
+constant max_count : integer := 5;                 --Maxima cantidad de ciclos para hacer 500ms
+signal count: integer range 0 to max_count;					 --Contador para el divisor de frecuencia
+signal sdout: std_logic_vector(3 downto 0) := "0000";
+
+begin
+
+SYNC_PROC: process(clk, stop) is
+begin
+	if(clk'event and clk = '1') then
+		if(stop = '1') then
+			state <= "00";									--Estado inicial
+			sdout <= "0000";
+		elsif(count = max_count) then					--Cada 1s detecta una subida de reloj
+			count <= 0;
+			state <= next_state;							--Pasa al proximo estado
+			if(sdout = "1111") then				--Si el contador llega al maximo vuelve al inicio
+				sdout <= "0000";
+			elsif(state = "01") then					--Sigue contando
+				sdout <= sdout + "0001";
+			end if;
+		else
+			count <= count + 1;							
+		end if;
+	end if;
+end process;
+
+--"00"=> Inicio
+--"01"=> Contar
+--"10"=> Pausar
+
+STATE_PROC: process(state, init_pause) is
+begin
+	next_state <= state;
+	
+	case(state) is
+		when "00" =>							--Estado inicial
+			if(init_pause = '1') then
+				next_state <= "01";
+			end if;
+		when "01" =>							--El cronometro empieza a contar
+			if(init_pause = '1') then
+				next_state <= "10";				--Pausar
+			end if;
+		when "10" =>							--Cronometro en pausa
+			if(init_pause = '1') then		
+				next_state <= "01";				--Reanudar cuenta
+			end if;
+		when others =>
+			next_state <= "00";				--Reiniciar
+	end case;
+end process;
+
+led_out <= sdout;
+				
+end Behavioral;
