@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -lib "secureip" -o "/home/ise/Proyectos/PE2/Buffer_32Bytes/buff_sim_isim_beh.exe" -prj "/home/ise/Proyectos/PE2/Buffer_32Bytes/buff_sim_beh.prj" "work.buff_sim" 

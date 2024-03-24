@@ -1,0 +1,4 @@
+xst -intstyle ise -ifn "/home/ise/Proyectos/PE2/Buffer_32Bytes/buff_32x8bits.xst" -ofn "/home/ise/Proyectos/PE2/Buffer_32Bytes/buff_32x8bits.syr" 
+xst -intstyle ise -ifn "/home/ise/Proyectos/PE2/Buffer_32Bytes/buff_32x8bits.xst" -ofn "/home/ise/Proyectos/PE2/Buffer_32Bytes/buff_32x8bits.syr" 
+xst -intstyle ise -ifn "/home/ise/Proyectos/PE2/Buffer_32Bytes/buff_32x8bits.xst" -ofn "/home/ise/Proyectos/PE2/Buffer_32Bytes/buff_32x8bits.syr" 
+xst -intstyle ise -ifn "/home/ise/Proyectos/PE2/Buffer_32Bytes/buff_32x8bits.xst" -ofn "/home/ise/Proyectos/PE2/Buffer_32Bytes/buff_32x8bits.syr" 
