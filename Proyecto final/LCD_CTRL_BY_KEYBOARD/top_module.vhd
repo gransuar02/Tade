@@ -43,6 +43,14 @@ end top_module;
 
 architecture Behavioral of top_module is
 
+component ps2d_en
+	Port ( ps2d_in : in  STD_LOGIC;
+           clk : in  STD_LOGIC;
+           rst : in  STD_LOGIC;
+           ps2d_out : out  STD_LOGIC;
+           pulse : out  STD_LOGIC);
+end component;
+
 component keyboard_receiver
 	port ( clk, reset: in std_logic;
 		ps2d, ps2c: in std_logic;   --key data, key clock
@@ -50,6 +58,15 @@ component keyboard_receiver
 		rx_done_tick: out std_logic;
 		dout: out std_logic_vector (7 downto 0)
 		);
+end component;
+
+component wait_F0
+	 Port ( byte : in  STD_LOGIC_VECTOR (7 downto 0);
+           en : in  STD_LOGIC;
+			  clk: in std_logic;
+			  rst: in std_logic;
+           dout : out  STD_LOGIC_VECTOR (7 downto 0);
+           filter_en : out  STD_LOGIC);
 end component;
 
 component buff_32x8bits
@@ -70,7 +87,7 @@ component fsm
 		rst: in std_logic;
 		data: out std_logic_vector(7 downto 0);
 		addr_lcd: out std_logic_vector(4 downto 0);
-		rdy, f_da: out std_logic
+		rdy: out std_logic
 		);
 end component;
 
@@ -95,9 +112,12 @@ component lcd
 			  );
 end component;
 
+type MES is(init,pulse_ack_buff,work);
+signal state_curr, state_next: MES;
 signal keyboard_tx_done: std_logic;
-signal ack_rx: std_logic;
-signal data_key_buff: std_logic_vector(7 downto 0);
+signal ps2d_x,pulse_x,pulse_tx,buff_en: std_logic;
+signal ack_rx,ack_bx: std_logic;
+signal data_key,buff_tx: std_logic_vector(7 downto 0);
 signal en_fsm: std_logic;
 signal data_fsm: std_logic_vector(7 downto 0);
 signal ascii_byte: std_logic_vector(7 downto 0);
@@ -107,24 +127,42 @@ signal rdy_tx: std_logic;
 
 begin
 
+auto_lcd <= '0';
+
+PULSE_PS2:ps2d_en
+port map(
+		clk => clk,
+		rst => rst,
+		ps2d_in => ps2d,
+		ps2d_out => ps2d_x,
+		pulse => pulse_x);
 
 KEYBOARD_HOST:keyboard_receiver
 port map(
 		clk => clk,
 		reset => rst,
-		ps2d => ps2d,
+		ps2d => ps2d_x,
 		ps2c => ps2c,
-		rx_en => rdy_tx,
+		rx_en => pulse_tx,
 		rx_done_tick => keyboard_tx_done,
-		dout => data_key_buff
+		dout => data_key
 		);
+		
+FILTER:wait_F0
+port map(
+		clk => clk,
+		rst => rst,
+		byte => data_key,
+		en => keyboard_tx_done,
+		dout => buff_tx,
+		filter_en => buff_en);
 		
 BUFFER0:buff_32x8bits
 port map(
 		clk => clk,
 		rst => rst,
-		en => keyboard_tx_done,
-		din => data_key_buff,
+		en => buff_en,
+		din => buff_tx,
 		ack_tx => ack_rx,
 		rdy => en_fsm,
 		dout => data_fsm
@@ -138,8 +176,7 @@ port map(
 		din => data_fsm,
 		data => ascii_byte,
 		addr_lcd => address,
-		rdy => en_lcd,
-		f_da => auto_lcd
+		rdy => en_lcd
 		);
 		
 LCD_CTRL:lcd
@@ -155,9 +192,51 @@ port map(
 		rs => rs,
 		rw => rw,
 		sfce => sfce,
-		ack => ack_rx,
+		ack => ack_bx,
 		rdy => rdy_tx
 		);
+		
+clock_process:process(clk)
+begin
+	if(rising_edge(clk))then
+		if(rst = '1')then
+			state_curr <= init;
+		else
+			state_curr <= state_next;
+		end if;
+	end if;
+end process;
+
+next_state_logic:process(state_curr,rdy_tx,ack_rx)
+begin
+	
+	state_next <= state_curr;
+	
+	case(state_curr)is
+		when init =>
+			if(rdy_tx = '1')then
+				state_next <= pulse_ack_buff;
+			end if;
+		
+		when pulse_ack_buff =>
+			if(ack_rx = '1')then
+				state_next <= work;
+			end if;
+			
+		when work =>
+			state_next <= work;
+			
+		when others =>
+			state_next <= init;
+	end case;
+end process;
+
+pulse_tx <= pulse_x when rdy_tx = '1' else '0';
+
+ack_rx <= keyboard_tx_done when state_curr = pulse_ack_buff else 
+			 ack_bx when state_curr = work else
+			 '0';
 
 end Behavioral;
+
 
