@@ -86,7 +86,7 @@ with c_t select
 	mux_out <= clk_timer when '0',
 				  t_pin when others;
 				  
-trig_out <= mux_out when and_out = '1' else 'Z';
+trig_out <= mux_out when and_out = '1' else '1';
 				  
 
 DIVISOR_1uS:clock_divider
